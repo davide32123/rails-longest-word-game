@@ -1,0 +1,12 @@
+<h1>Result</h1>
+<% if @real_word %>
+  <p>Your answer: <%= @answer %></p>
+  <p>Time Taken to answer: <%= @elapsed_time %></p>
+  <p>Your score: <%= @answer.length * 10 - @elapsed_time %></p>
+  <p>Well Done!</p>
+  <% elsif @valid_word %>
+    <p>The word is valid according to the grid, but is not a valid English word</p>
+  <% else %>
+    <p>This word is not valid according to the grid</p>
+<% end %>
+<%= link_to "Try again", new_path %>
